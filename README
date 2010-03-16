@@ -1,0 +1,3 @@
+In the WindowsFormApplication1/SampleForm.cs there is, after the InitializeComponent(); call, a call to LabelManager.LabelUtils.UpdateUi(this); that is able to update any field or property, having the path namespace.path.property with the value corresponding to the entry en.namespace.path.property in the file international.properties, where the "en" should also be the local property specified in the App.config.
+
+

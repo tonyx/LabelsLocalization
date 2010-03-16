@@ -1,0 +1,5 @@
+C:\git\InternationalLabelManager\LabelManagerSample\LabelManager\bin\Debug\LabelManager.dll
+C:\git\InternationalLabelManager\LabelManagerSample\LabelManager\bin\Debug\LabelManager.pdb
+C:\git\InternationalLabelManager\LabelManagerSample\LabelManager\obj\Debug\ResolveAssemblyReference.cache
+C:\git\InternationalLabelManager\LabelManagerSample\LabelManager\obj\Debug\LabelManager.dll
+C:\git\InternationalLabelManager\LabelManagerSample\LabelManager\obj\Debug\LabelManager.pdb

@@ -1,20 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Reflection;
 using System.Collections;
-
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Text;
 using System.Windows.Forms;
 
 
@@ -140,52 +126,13 @@ namespace LabelManager
                     String localClassPropertyOrFieldPath = currentkey.Replace(subStringOfKeyToMatch + ".", "");
                     try
                     {
-                        LabelUtils.modifyRecursively(form, localClassPropertyOrFieldPath, currentValue);
+                        modifyRecursively(form, localClassPropertyOrFieldPath, currentValue);
                     }
                     catch (Exception e)
                     {
-                        //                        log.Debug(e.StackTrace);
                     }
                 }
             }
-            Console.WriteLine(thisClassName);
-        }
-
-        public static String GetVaklueByKey(String key)
-        {
-            String toReturn = SingletonLabelManager.getInstance().getLabel(key + "." + myLocale);
-            toReturn = (toReturn == null || "".Equals(toReturn) ? key : toReturn);
-            return toReturn;
-
-        }
-
-
-        public static String GetVaklueByKey(String key, String locale)
-        {
-            String toReturn = SingletonLabelManager.getInstance().getLabel(key + "." + locale);
-
-            toReturn = (toReturn == null || "".Equals(toReturn) ? key : toReturn);
-            return toReturn;
-
-        }
-
-        public static void UpdateUiColumnsHeaders(System.Windows.Forms.DataGridViewColumnCollection collection)
-        {
-
-            IEnumerator ienum = collection.GetEnumerator();
-            while (ienum.MoveNext())
-            {
-                DataGridViewColumn dgv = ((DataGridViewColumn)ienum.Current);
-                string labelMatch = LabelUtils.myLocale + "." + "columnheadercodename" + "." + dgv.HeaderText;
-                if (SingletonLabelManager.getInstance().getProperties().Contains(labelMatch))
-                {
-                    // riassegna alla label il valore in accordo con labelmatch
-                    dgv.HeaderText = SingletonLabelManager.getInstance().getLabel(labelMatch);
-
-                }
-            }
-
-            // supposed to update columns headers according to column name and localizastion            
         }
 
 

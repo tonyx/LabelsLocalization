@@ -10,7 +10,7 @@ The [locale] value should be set in the App.config, in the form:
 <add key="locale" value="it"/> 
 
 The international.properties contains the following entry:
-it.WindowsFormsApplication1.SampleForm.label1.Text=questo testo e' in italiano
+it.WindowsFormsApplication1.SampleForm.label1.Text=questo testo è in italiano
 
 so the label Text property specified by the package.class.property above can be changed on the fly.
 

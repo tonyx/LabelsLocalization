@@ -1,21 +1,6 @@
-By default visual studio will arrange any windows form with more than one file, one of them just assign values according to visual forms, and expose values assignment by InitializeComponent() call.
+A c# solution for label localization by reflection and java style properties file.
 
-It is possible to add, after the InitializeComponent(), a LabelUtils.UpdateUi(this) that is able to change any field by reflection.
-This could be useful for localization.
+Description here:
+http://tonyxzt.blogspot.com/2010/03/quick-c-localization-by-java-properties.html
 
-It is just needed that a international.properties file properly contains property values in the form of:
-[locale].namespace.path.property = localized text
-
-The [locale] value should be set in the App.config, in the form:
-<add key="locale" value="it"/> 
-
-The international.properties contains the following entry:
-it.WindowsFormsApplication1.SampleForm.label1.Text=questo testo è in italiano
-
-so the label Text property specified by the package.class.property above can be changed on the fly.
-
-This is not efficient in execution but could be quick for development.
-
-Some bashing could be useful to report all the "Text" properties contained in all the files:
-for i in `find . | grep ".cs$"`; do echo $i; cat $i | egrep "Text ="; done;
 

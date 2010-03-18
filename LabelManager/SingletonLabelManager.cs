@@ -27,7 +27,6 @@ namespace LabelManager
         }
 
         /// <summary>
-        /// this is apparently useful to not break ui visual studio forms
         /// </summary>
         /// <returns></returns>
         public ICollection GetKeyCollection()

@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace LabelManager
 {
     class SingletonLabelManager
     {
-        private static string CLASS_NAME_PREFIX = "class";
-  
         private JavaProperties props;
-
         private static SingletonLabelManager instance;
-
         protected SingletonLabelManager()
         {
             StreamReader streamReader = null;
@@ -29,13 +22,9 @@ namespace LabelManager
             }
             catch (Exception e)
             {
-
-     //           log.Debug("eccezione in load international props " + e.StackTrace);
-
+                // do what you want here
             }
-
         }
-
 
         /// <summary>
         /// this is apparently useful to not break ui visual studio forms
@@ -46,10 +35,9 @@ namespace LabelManager
             if (props == null)
             {
                 props = new JavaProperties();
-                props.Add("bypass", "bypass");
+                props.Add("it.LabelManager.Sample.Attribute", "valore italiano");
+                props.Add("en.LabelManager.Sample.Attribute", "valore inglese");
             }
-
-
             return props.Keys;
         }
 
@@ -65,7 +53,6 @@ namespace LabelManager
             if (instance == null)
             {
                 instance = new SingletonLabelManager();
-
             }
             return instance;
         }

@@ -8,8 +8,7 @@ namespace LabelManager
 {
     public class LabelUtils
     {
-        static String myLocale = System.Configuration.ConfigurationManager.AppSettings["locale"];
-
+       
         /// <summary>
         /// 
         /// </summary>
@@ -68,10 +67,7 @@ namespace LabelManager
             else
             {
                 String prefix = fieldPath.Substring(0, fieldPath.IndexOf('.'));
-                Console.WriteLine(prefix);
-
                 Object o;
-
                 o = ob.GetType().GetProperty(prefix, BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
                 if (o != null)
                 {
@@ -99,8 +95,6 @@ namespace LabelManager
         /// <param name="form"></param>
         public static void UpdateUi(Object form)
         {
-            // poi vedi se funziona con tutto l'accrocchio ovvero dalle properties applicative globali vedi dopo
-            //            String locale = "en";
             String locale = System.Configuration.ConfigurationManager.AppSettings["locale"];
             if (locale == null || "".Equals(locale))
             {
@@ -108,11 +102,8 @@ namespace LabelManager
             }
 
 
-
             String thisClassName = form.GetType().ToString();
-
             ICollection keys = SingletonLabelManager.getInstance().GetKeyCollection();
-
             IEnumerator keysEnum = keys.GetEnumerator();
 
             while (keysEnum.MoveNext())
@@ -134,7 +125,5 @@ namespace LabelManager
                 }
             }
         }
-
-
     }
 }
